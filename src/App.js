@@ -2,24 +2,24 @@ import React, { useState } from 'react';
 
 const App = () => {
 
-  const todoItems = [
-  
-  ];
+  /* setArray is used to update the array and 
+  render it in the todoItems.map */
+  const [todoItems, setArray] = useState([]);
+  const [item, setItem] = useState('');
+  const [count, setCount] = useState(0);
   
   const handleKeyPress = event => {
     //setCount(count + 1);
     if (event.key === 'Enter') {
-      todoItems.push(item);
+      setArray([...todoItems, item]);
       console.log(todoItems)
-    }
+      return setCount(count + 1);
+    };
   };
-
-  const [item, setItem] = useState('');
-  //const [count, setCount] = useState(0);
 
   return (
     <React.Fragment>
-      <h1>You've got things to do!</h1>
+      <h1>You've got {count} things to do!</h1>
       <input 
         type='text'
         name='todo' 
@@ -27,9 +27,9 @@ const App = () => {
         onChange={event => setItem(event.target.value)}
         onKeyPress={handleKeyPress} 
         />
-      <div>
+      <ul>
         {todoItems.map(item => <li>{item}</li>)}
-      </div>
+      </ul>
     </React.Fragment>
   );
 }
