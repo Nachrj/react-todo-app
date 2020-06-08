@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container h1 {
+  font-size: 3em;
+  color: #6a2eab;
+}
+
+.container input {
+  width: 50%;
+  text-align: center;
+  margin: auto;
+  border-bottom: 1px;
+}
+
+.deleteButton {
+  width: 50%;
+  margin: auto;
+}

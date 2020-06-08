@@ -1,9 +1,11 @@
 import React from 'react';
 
-const TodoItem = () => {
+import './TodoItem.css';
+
+const TodoItem = (props) => {
   return (
     <div>
-      <h1>{title}</h1>
+      <a>{props.title}</a>
     </div>
   )
 }
